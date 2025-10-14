@@ -30,9 +30,10 @@ if(isset($_POST['btn'])){
     $sql="SELECT * FROM linx";
     $result=mysqli_query($conn,$sql);
 
-    while($row=mysqli_fetch_assoc($result)){
-        echo "<h1>".$row['url']."</h1>";
-    }
-    ?>
+    while($row=mysqli_fetch_assoc($result)){  ?>
+    
+        <a href="<?=$row['url']; ?>"><?=$row['url']; ?></a><br>
+        
+ <?php   }  ?>
 </body>
 </html>
