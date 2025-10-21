@@ -14,6 +14,13 @@ if(isset($_POST['btn'])){
     $result=mysqli_query($conn,$sql);
 }
    
+if(isset($_GET['del'])){
+    $id=$_GET['del'];
+    $sql="DELETE FROM linx WHERE id=$id";
+    $result=mysqli_query($conn, $sql);
+    header("Location:index.php");
+}
+
 
 ?>
 <html lang="en">
@@ -34,7 +41,10 @@ if(isset($_POST['btn'])){
 
     while($row=mysqli_fetch_assoc($result)){  ?>
     
-        <a href="<?=$row['url']; ?>"><?=$row['description']; ?></a><br>
+        <a href="<?=$row['url']; ?>"><?=$row['description']; ?></a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="index.php?del=<?=$row['id']; ?>">Radera</a>
+        <br>
         
  <?php   }  ?>
 </body>
