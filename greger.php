@@ -15,7 +15,7 @@ $names = []; //Skapar en tom array för att lagra namn
 $sql = "SELECT name FROM users ORDER BY name";
 $result = mysqli_query($conn, $sql); //Hämtar alla namn från databasen sorterade i bokstavsordning
 while($row = mysqli_fetch_assoc($result)){
-    $names[] = $row['name']; //Lägger till varje namn i arrayen
+    $names[] = $row['name']; //Lägger till varje namn från databasen i arrayen
 }
 ?>
 <html lang="en">
@@ -36,19 +36,23 @@ while($row = mysqli_fetch_assoc($result)){
 </body>
 </html>
 <script>
-        const names = <?=json_encode($names, JSON_UNESCAPED_UNICODE) ?>; //JavaScript-array med namn från PHP-variablen $names, JSON-kodad för att göra coola grejjer i javascript
+        const names = <?=json_encode($names, JSON_UNESCAPED_UNICODE) ?>; 
+        //JavaScript-array med namn från PHP-variablen $names, JSON-kodad för att göra coola grejjer i javascript
 
         function updateList() {
         const input = document.getElementById("name");
         const list  = document.getElementById("list");
-        const q = input.value.toLowerCase().trim(); //Hämtar värdet från inputfältet och gör det till gemener och tar bort mellanslag
+        const q = input.value.toLowerCase().trim(); 
+        //Hämtar värdet från inputfältet och gör det till gemener och tar bort mellanslag
 
         list.innerHTML = names 
             .filter(n => n.toLowerCase().startsWith(q))
             .slice(0, 30)
             .map(n => '<option value="'+n+'">'+n+'</option>')
-            .join(""); //Filtrerar namn som börjar med det som skrivits in, begränsar till 30 resultat, skapar option-element och sätter in i datalisten
-            if(list.innerHTML === "") { //Om inga namn matchar det inskrivna värdet var grönt inputfältet, annars rött
+            .join(""); 
+            //Filtrerar namn som börjar med det som skrivits in, begränsar till 30 resultat, skapar option-element och sätter in i datalisten
+            if(list.innerHTML === "") { 
+                //Om inga namn matchar det inskrivna värdet var grönt inputfältet, annars rött
                 input.classList.add("green");
                 input.classList.remove("red");
             }else {
