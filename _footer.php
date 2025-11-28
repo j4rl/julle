@@ -1,0 +1,1 @@
+<footer>&copy;j4rl 2025</footer>

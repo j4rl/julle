@@ -1,0 +1,9 @@
+:root{
+    --bg_light:white;
+    --txt_headers:rgb(48, 48, 48);
+    --txt_main:black;
+
+}
+h1{
+    color:red;
+}

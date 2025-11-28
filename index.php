@@ -37,15 +37,15 @@ if(isset($_GET['del'])){
     </form>
     <?php
     $sql="SELECT * FROM linx";
-    $result=mysqli_query($conn,$sql);
+    $result=mysqli_query($conn,$sql); ?>
 
-    while($row=mysqli_fetch_assoc($result)){  ?>
+    <?php while($row=mysqli_fetch_assoc($result)):  ?>
     
         <a href="<?=$row['url']; ?>"><?=$row['description']; ?></a>
         &nbsp;&nbsp;&nbsp;
         <a href="index.php?del=<?=$row['id']; ?>">Radera</a>
         <br>
-        
- <?php   }  ?>
+
+    <?php endwhile; ?>
 </body>
 </html>

@@ -1,0 +1,16 @@
+body {
+    height: 100dvh;
+    font: 110% sans-serif;
+}
+
+h1 {
+    font-size: 700%;
+}
+
+.green {
+    background: lightgreen !important;
+}
+
+.red {
+    background: lightcoral !important;
+}
