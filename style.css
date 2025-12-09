@@ -1,16 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     height: 100dvh;
-    font: 110% sans-serif;
+    font: 1.2rem sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
-h1 {
-    font-size: 700%;
+header {
+    background: #000;
+    color: white;
 }
 
-.green {
-    background: lightgreen !important;
+main {
+    flex-grow: 5;
+    background: linear-gradient(to top, #4b4b4b,#161616);
 }
 
-.red {
-    background: lightcoral !important;
+nav {
+    background: #2c2c2c;
+
+    a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            background: #ffffff33;
+            color: cornflowerblue;
+        }
+    }
+}
+
+footer {
+    background: #000;
+    color: white;
 }

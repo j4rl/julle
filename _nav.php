@@ -1,6 +1,6 @@
 <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Legal</a>
-    <a href="">Settings</a>
+    <a href="index.php">Home</a>
+    <a href="about.php">About</a>
+    <a href="legal.php">Legal</a>
+    <a href="logout.php">Log out</a>
 </nav>
